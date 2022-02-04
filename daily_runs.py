@@ -24,17 +24,10 @@ display, browser = controller.get_browser_elements()
 direct_query_list = ['PL_BUYER_BACKLOG', 'PL_CHNG_ORDER_INSERTS', 'PL_CNT_ACTIVITY', 'PL_CONTRACTS_DAILY', 
                     'PL_OPEN_PO_SUMMARY', 'PL_PO_PARTICIPATION_DBE', 'PL_REQ_ACTIVITY', 'PL_REQUISITION_DATA',
                     'PL_REQUISITION_DATA_PT1', 'PL_VOUCHER_PYMTS_PT7', 'PL_WF_PO_APPR_FULL_STEPS_V2', 
-                    'PL_WF_PO_APPR_HISTORY', 'PL_WO_DESCRIPTIONS', 'PL_CNT_ACTIVITY']
+                    'PL_WF_PO_APPR_HISTORY', 'PL_WO_DESCRIPTIONS', 'PL_CNT_ACTIVITY', 
+                    'PL_PURCH_ORDER_DATA_PT5', 'PL_PURCH_ORDER_DATA_PT6', 'PL_PURCH_ORDER_DATA_PT7']
 
 # Loops through all direct queries in the given list and runs a direct query for them.
 controller.get_direct_queries(direct_query_list)
-
-# Punch order queries
-controller.get_direct_query('PL_PURCH_ORDER_DATA_PT5')
-ducktape.wait_for_file(dlpath, wait = 0, file_num=1)
-controller.get_direct_query('PL_PURCH_ORDER_DATA_PT6')
-ducktape.wait_for_file(dlpath, wait = 0, file_num =2)
-controller.get_direct_query('PL_PURCH_ORDER_DATA_PT7')
-ducktape.wait_for_file(dlpath, wait = 0, file_num =3)
 
 ducktape.chrome_close(display, browser)
