@@ -1,5 +1,4 @@
 import sys
-from aem import con
 import selenium
 
 sys.path.append('/Users/pbenson/Documents/')
