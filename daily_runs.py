@@ -21,7 +21,7 @@ controller = fmis_controller_class.FmisController(dlpath)
 display, browser = controller.get_browser_elements()
 
 # Queries
-direct_query_list = ['PL_BUYER_BACKLOG', 'PL_CHNG_ORDER_INSERTS', 'PL_CNT_ACTIVITY', 'PL_CONTRACTS_DAILY', 
+direct_query_list = ['PL_BUYER_BACKLOG', 'PL_CHNG_ORDER_INSERTS', 'PL_CONTRACTS_DAILY', 
                     'PL_OPEN_PO_SUMMARY', 'PL_PO_PARTICIPATION_DBE', 'PL_REQ_ACTIVITY', 'PL_REQUISITION_DATA',
                     'PL_REQUISITION_DATA_PT1', 'PL_VOUCHER_PYMTS_PT7', 'PL_WF_PO_APPR_FULL_STEPS_V2', 
                     'PL_WF_PO_APPR_HISTORY', 'PL_WO_DESCRIPTIONS', 'PL_CNT_ACTIVITY', 
