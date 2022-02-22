@@ -15,3 +15,4 @@ DOWNLOAD_PATHS= grep "/home" pl_daily_runs_with_paths.txt | sed "s/$/$TESTDIR\//
 # Iterate over 
 echo "$DOWNLOAD_PATHS" | while IFS= read -r line ; do rm -r $line; done
 # https://unix.stackexchange.com/questions/275794/iterating-over-multiple-line-string-stored-in-variable
+echo "Done!"
