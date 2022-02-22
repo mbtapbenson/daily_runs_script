@@ -8,27 +8,32 @@ print(sys.path)
 import ducktape
 from ducktape import fmis_controller_class
 
-with open('/home/rubix/Desktop/Project-Ducttape/PeterBenson_Projects/daily_runs_script/direct_query_names.txt', 'r') as f:
-    direct_query_list = f.readlines()
-    # This should be of the format 'Query name \t Download path'
+
+# The query names aren't sufficient to run queries, as each query is downloaded to a different 
+# directory. We need download paths too.
+
+with open('/home/rubix/Desktop/Project-Ducttape/PeterBenson_Projects/daily_runs_script/pl_daily_runs_with_pahts.txt', 'r') as f:
+    file_lines = f.readlines()
+    # This is of the format 
+    # Download path
+    # Corresponding queries
+    # Download path 2
 
 # Instantiate the controller object
 controller = fmis_controller_class.FmisController('/home/rubix/Desktop/Project-Ducttape')
-# These are assigned so they can be closed later. 
 
-# Queries
-"""
-direct_query_list = ['PL_BUYER_BACKLOG', 'PL_CHNG_ORDER_INSERTS', 'PL_CONTRACTS_DAILY', 
-                    'PL_OPEN_PO_SUMMARY', 'PL_PO_PARTICIPATION_DBE', 'PL_REQ_ACTIVITY', 'PL_REQUISITION_DATA',
-                    'PL_REQUISITION_DATA_PT1', 'PL_VOUCHER_PYMTS_PT7', 'PL_WF_PO_APPR_FULL_STEPS_V2', 
-                    'PL_WF_PO_APPR_HISTORY', 'PL_WO_DESCRIPTIONS', 'PL_CNT_ACTIVITY', 
-                    'PL_PURCH_ORDER_DATA_PT5', 'PL_PURCH_ORDER_DATA_PT6', 'PL_PURCH_ORDER_DATA_PT7']
-"""
+# Loop through the download path list
+if not sys.argv[1]:
+    raise ValueError('Please provide a date string as argument')
 
-# Loops through all direct queries in the given list and runs a direct query for them.
-controller.get_direct_queries(direct_query_list)
+date = sys.argv[1]
 
-# Also need to get the download paths for each query.
-# Loop through the query file (query, filename) and execute the query. 
+for line in file_lines:
+    # If the line is a download path, switch to that download directory
+    if line.startswith('/home'):
+        controller.change_download_directory(line + date + '/')
+    # Otherwise, run a query.
+    else:
+        controller.get_direct_query(line)
 
 controller.logout()
