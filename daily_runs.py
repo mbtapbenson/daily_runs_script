@@ -36,6 +36,13 @@ if not sys.argv[2]:
 
 date = sys.argv[2]
 
+### IMPORTANT:
+# Daily runs doesn't actually run the first query it receives. It is unclear why this is.
+# To rectify this issue, we run a dummy query here. In this case, it's the first two lines of the query file.
+controller.change_download_directory(first_download + date + '/')
+controller.get_direct_query(file_lines[1])
+
+
 for line in file_lines:
     print(line)
     # If the line is a download path, switch to that download directory
