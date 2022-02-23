@@ -39,6 +39,7 @@ date = sys.argv[2]
 ### IMPORTANT:
 # Daily runs doesn't actually run the first query it receives. It is unclear why this is.
 # To rectify this issue, we run a dummy query here. In this case, it's the first two lines of the query file.
+print("RUNNING DUMMY QUERY:")
 controller.change_download_directory(first_download + date + '/')
 controller.get_direct_query(file_lines[1])
 
