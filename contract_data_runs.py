@@ -11,12 +11,8 @@ from ducktape import fmis_controller_class
 
 # The query names aren't sufficient to run queries, as each query is downloaded to a different 
 # directory. We need download paths too.
-if not sys.argv[1]:
-    raise ValueError('Please provide a path to the query file')
 
-query_file = sys.argv[1]
-
-with open(query_file, 'r') as f:
+with open('/home/rubix/Desktop/Project-Ducttape/PeterBenson_Projects/daily_runs_script/contract_data_run.txt', 'r') as f:
     file_lines = f.read().splitlines()
     # read().splitlines() gets rid of the newlines.
     
@@ -26,15 +22,13 @@ with open(query_file, 'r') as f:
     # Download path 2
 
 # Instantiate the controller object
-first_download = file_lines[0]
-
-controller = fmis_controller_class.FmisController(first_download)
+controller = fmis_controller_class.FmisController('/home/rubix/Desktop/Project-Ducttape/data/contract_data/test')
 
 # Loop through the download path list
-if not sys.argv[2]:
+if not sys.argv[1]:
     raise ValueError('Please provide a date string as argument')
 
-date = sys.argv[2]
+date = sys.argv[1]
 
 for line in file_lines:
     print(line)

@@ -1,0 +1,4 @@
+/home/rubix/Desktop/Project-Ducttape/data/inv_mgmt_by_base/
+PL_INV_BY_BASE
+/home/rubix/Desktop/Project-Ducttape/data/contract_data/
+PL_CNT_ACTIVITY

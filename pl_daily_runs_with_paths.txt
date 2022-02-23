@@ -1,6 +1,6 @@
 /home/rubix/Desktop/Project-Ducttape/data/contract_data/
 PL_CNT_ACTIVITY
-/home/rubix/Desktop/Project-Ducttape/data/contract/ 
+/home/rubix/Desktop/Project-Ducttape/data/contract/
 NO_CONTRACT_RUBIX
 /home/rubix/Desktop/Project-Ducttape/data/backlog_pl/
 PL_BUYER_BACKLOG
@@ -44,14 +44,7 @@ PL_CHNG_ORDER_INSERTS
 PL_REQUISITION_DATA_PT1
 /home/rubix/Desktop/Project-Ducttape/data/inv_mgmt_by_base/
 PL_INV_BY_BASE
-/home/rubix/Desktop/Project-Ducttape/data/inv_mgmt_by_base/
-PL_INV_BY_BASE
-/home/rubix/Desktop/Project-Ducttape/data/inv_mgmt_by_base/
-PL_INV_BY_BASE
-/home/rubix/Desktop/Project-Ducttape/data/inv_mgmt_by_base/
-PL_INV_BY_BASE
 /home/rubix/Desktop/Project-Ducttape/data/invent_mgmt_items/
 PL_OBSOLETE_ITEMS
 /home/rubix/Desktop/Project-Ducttape/data/pl_wo_descriptions/
-PL_AnniTEst                                                                                                                               
 PL_WO_DESCRIPTIONS
